@@ -20,13 +20,17 @@
 
 				<?php if ($_GET['name'] == NULL): ?>
 
-				<form>
-					<label for="name">Senpai what is your name?</label>
-					<input type="text" name="name">
-					<input type="submit">
-				</form>
+					<form>
+						<label for="name">Senpai what is your name?</label>
+						<input type="text" name="name">
+						<input type="submit">
+					</form>
 
-			<?php endif ?>
+				<?php elseif ($_GET['name'] == Liam || liam || yamada || Yamada):?>
+
+					<h1><?php print($_GET['name']) ?> Ta dig och dina ideer</h1>
+
+				<?php endif ?>
 
 			</div>
 
