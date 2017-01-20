@@ -9,7 +9,14 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<title>ChanBot</title>
 </head>
-
+<?php 
+	$new_name = $_GET['name'];
+	$half_name_length = (mb_strlen($new_name) / 2);
+	$remaining_chars = (mb_strlen($new_name) - $half_name_length);
+	$name_end = mb_substr($new_name, $half_name_length, $remaining_chars);
+	$name_beginning = mb_substr($new_name, 0, $half_name_length);
+	$botname = ($name_end . $name_beginning);
+ ?>
 <body>
 
 	<div class="col-md-4 offset-md-4 rounded">
@@ -26,19 +33,14 @@
 						<input type="submit">
 					</form>
 
-				<?php 
 
-					else;
-					$new_name = $_GET[]'name';
-					$half_name_length = (int) (mb_strlen($new_name) / 2);
-					$remaining_chars = mb_strlen($new_name) - $half_name_length;
-					$name_end = mb_substr($new_name, $half_name_length, $remaining_chars);
-					$name_beginning = mb_substr($new_name, 0, $half_name_length);
-					$botname = $name_end . $name_beginning;
+				<?php elseif ($_GET['name'] == 'liam' || $_GET['name'] == 'Liam' || $_GET['name'] == 'Yamada' || $_GET['name'] == 'yamada'): ?>
+					
+					<h1><?php print($_GET['name']) ?> You are a fucking cunt</h1>
 
-				?>
+				<?php elseif  ($_GET['name'] != 'liam' || $_GET['name'] != 'Liam' || $_GET['name'] != 'Yamada' || $_GET['name'] != 'yamada'): ?>
 
-					<h1>Welcome <?php print($_GET['name']) ?>-chan. <br> My name is <?php $botname ?></h1>
+					<h1>Welcome <?php print($_GET['name']) ?>-chan. <br> My name is <?php print($botname) ?></h1>
 
 				<?php endif; ?>
 
